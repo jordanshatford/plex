@@ -44,7 +44,6 @@ services:
       - ${ROOT_DIRECTORY}/video/Seeding:/downloads
       - ${ROOT_DIRECTORY}/video/TVDownloads:/tvdownloads 
       - ${ROOT_DIRECTORY}/video/FilmDownloads:/filmdownloads 
-      - ${ROOT_DIRECTORY}/video/MusicDownloads:/musicdownloads
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
