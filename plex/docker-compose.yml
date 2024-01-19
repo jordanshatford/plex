@@ -1,0 +1,143 @@
+version: '3.8'
+
+services: 
+  vpn:
+    image: qmcgaw/gluetun:latest
+    container_name: vpn
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8888:8888/tcp   # http proxy
+      - 8388:8388/tcp   # shadowsocks
+      - 8388:8388/udp   # shadowsocks
+      - 8090:8090       # qbittorrent web ui
+      - 6881:6881       # qbittorrent
+      - 6881:6881/udp   # qbittorrent
+      - 9696:9696       # prowlarr port
+      - 8989:8989       # sonnar port
+      - 7878:7878       # radarr port
+      - 5055:5055       # overseerr port
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/glueton:/gluetun
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - VPN_SERVICE_PROVIDER=nordvpn
+      - VPN_TYPE=openvpn
+      - OPENVPN_USER=${NORDVPN_USER}
+      - OPENVPN_PASSWORD=${NORDVPN_PASSWORD}
+      - SERVER_COUNTRIES=${NORDVPN_SERVER_COUNTRIES}
+    restart: unless-stopped
+
+  qbittorrent:
+    image: linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+    #   - 8090:8090
+    #   - 6881:6881
+    #   - 6881:6881/udp
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/qbittorrent:/config
+      - ${ROOT_DIRECTORY}/video/Seeding:/downloads
+      - ${ROOT_DIRECTORY}/video/TVDownloads:/tvdownloads 
+      - ${ROOT_DIRECTORY}/video/FilmDownloads:/filmdownloads 
+      - ${ROOT_DIRECTORY}/video/MusicDownloads:/musicdownloads
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - WEBUI_PORT=8090
+    restart: unless-stopped
+  
+  prowlarr:
+    image: linuxserver/prowlarr:latest
+    container_name: prowlarr
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+    #   - 9696:9696
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/prowlarr:/config
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    restart: unless-stopped
+    depends_on:
+      - vpn
+      - qbittorrent
+
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name:  sonarr
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+      # - 8989:8989
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/sonarr:/config
+      - ${ROOT_DIRECTORY}/video/TV:/tv
+      - ${ROOT_DIRECTORY}/video/TVDownloads:/downloads
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    depends_on:
+      - qbittorrent
+      - prowlarr
+
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+    #   - 7878:7878
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/radarr:/config
+      - ${ROOT_DIRECTORY}/video/Films:/movies
+      - ${ROOT_DIRECTORY}/video/FilmDownloads:/downloads
+    restart: unless-stopped
+    depends_on:
+      - qbittorrent
+      - prowlarr
+
+  overseerr:
+    image: linuxserver/overseerr:latest
+    container_name: overseerr
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+    #   - 5055:5055
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/overseerr:/config
+    restart: unless-stopped
+    depends_on:
+      - sonarr
+      - radarr
+
+  plex:
+    image: linuxserver/plex:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - VERSION=latest
+    volumes:
+      - ${ROOT_DIRECTORY}/dockerdata/plex:/config:rw
+      - ${ROOT_DIRECTORY}/video/TV:/tv
+      - ${ROOT_DIRECTORY}/video/Films:/movies
+    restart: unless-stopped
