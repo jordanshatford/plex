@@ -18,7 +18,7 @@ services:
       - 7878:7878       # radarr port
       - 5055:5055       # overseerr port
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/glueton:/gluetun
+      - ${ROOT_DIRECTORY}/data/dockerdata/glueton:/gluetun
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -40,10 +40,8 @@ services:
     #   - 6881:6881
     #   - 6881:6881/udp
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/qbittorrent:/config
-      - ${ROOT_DIRECTORY}/video/Seeding:/downloads
-      - ${ROOT_DIRECTORY}/video/TVDownloads:/tvdownloads 
-      - ${ROOT_DIRECTORY}/video/FilmDownloads:/filmdownloads 
+      - ${ROOT_DIRECTORY}/data/dockerdata/qbittorrent:/config
+      - ${ROOT_DIRECTORY}/data/torrents:/data/torrents
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -58,7 +56,7 @@ services:
     # ports:
     #   - 9696:9696
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/prowlarr:/config
+      - ${ROOT_DIRECTORY}/data/dockerdata/prowlarr:/config
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -76,9 +74,8 @@ services:
     # ports:
       # - 8989:8989
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/sonarr:/config
-      - ${ROOT_DIRECTORY}/video/TV:/tv
-      - ${ROOT_DIRECTORY}/video/TVDownloads:/downloads
+      - ${ROOT_DIRECTORY}/data/dockerdata/sonarr:/config
+      - ${ROOT_DIRECTORY}/data:/data
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -99,9 +96,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/radarr:/config
-      - ${ROOT_DIRECTORY}/video/Films:/movies
-      - ${ROOT_DIRECTORY}/video/FilmDownloads:/downloads
+      - ${ROOT_DIRECTORY}/data/dockerdata/radarr:/config
+      - ${ROOT_DIRECTORY}/data:/data
     restart: unless-stopped
     depends_on:
       - qbittorrent
@@ -119,7 +115,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/overseerr:/config
+      - ${ROOT_DIRECTORY}/data/dockerdata/overseerr:/config
     restart: unless-stopped
     depends_on:
       - sonarr
@@ -135,7 +131,6 @@ services:
       - PGID=${PGID}
       - VERSION=latest
     volumes:
-      - ${ROOT_DIRECTORY}/dockerdata/plex:/config:rw
-      - ${ROOT_DIRECTORY}/video/TV:/tv
-      - ${ROOT_DIRECTORY}/video/Films:/movies
+      - ${ROOT_DIRECTORY}/data/dockerdata/plex:/config:rw
+      - ${ROOT_DIRECTORY}/data/media:/data/media
     restart: unless-stopped
