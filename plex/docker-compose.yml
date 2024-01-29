@@ -1,3 +1,35 @@
+# This is a docker-compose file used to setup everything you need to run a Plex server. Many of
+# the services run are placed behind a VPN which can be configured using the provider of your
+# choice (as long as it is supported in the gluetun docker image).
+#
+# VPN:
+#   Overseerr, Sonarr, Radarr, Prowlarr, Qbittorrent
+# Non-VPN
+#   Plex
+#
+# Note that Sonarr, Radarr, and Overseerr dont need to be behind the VPN if you're using Prowlarr
+# for the indexers. But Prowlarr should be behind the VPN to avoid ISPs that block indexers.
+#
+# Before running docker-compose, you should ensure all of the following directories exist. This can
+# be done using the init.sh script provided alongside the docker-compose file.
+#
+# Directories for Docker State:
+#  /data/dockerdata/plex         - Plex
+#  /data/dockerdata/overseerr    - Overseerr
+#  /data/dockerdata/sonarr       - Sonarr
+#  /data/dockerdata/radarr       - Radarr
+#  /data/dockerdata/prowlarr     - Prowlarr
+#  /data/dockerdata/qbt          - QBitorrent
+#
+# Directories for Torrents:
+#  /data/torrents/movies         - Movies
+#  /data/torrents/tv             - TV Shows
+#
+# Directories for Media:
+#  /data/media/movies            - Movies
+#  /data/media/tv                - TV Shows
+# 
+
 version: '3.8'
 
 services: 
