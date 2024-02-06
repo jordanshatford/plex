@@ -32,7 +32,7 @@
 
 version: '3.8'
 
-services: 
+services:
   vpn:
     image: qmcgaw/gluetun:latest
     container_name: vpn
@@ -79,7 +79,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     restart: unless-stopped
-  
+
   prowlarr:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
