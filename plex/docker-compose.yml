@@ -3,12 +3,12 @@
 # choice (as long as it is supported in the gluetun docker image).
 #
 # VPN:
-#   Overseerr, Sonarr, Radarr, Prowlarr, Qbittorrent
+#   Overseerr, Bazarr, Sonarr, Radarr, Prowlarr, Qbittorrent
 # Non-VPN
 #   Plex
 #
-# Note that Sonarr, Radarr, and Overseerr dont need to be behind the VPN if you're using Prowlarr
-# for the indexers. But Prowlarr should be behind the VPN to avoid ISPs that block indexers.
+# Note that Sonarr, Radarr, Bazarr, and Overseerr dont need to be behind the VPN if you're using
+# Prowlarr for the indexers. But Prowlarr should be behind the VPN to avoid ISPs that block indexers.
 #
 # Before running docker-compose, you should ensure all of the following directories exist. This can
 # be done using the init.sh script provided alongside the docker-compose file.
@@ -16,6 +16,7 @@
 # Directories for Docker State:
 #  /data/dockerdata/plex         - Plex
 #  /data/dockerdata/overseerr    - Overseerr
+#  /data/dockerdata/bazarr       - Bazarr
 #  /data/dockerdata/sonarr       - Sonarr
 #  /data/dockerdata/radarr       - Radarr
 #  /data/dockerdata/prowlarr     - Prowlarr
@@ -48,6 +49,7 @@ services:
       - 9696:9696       # prowlarr port
       - 8989:8989       # sonnar port
       - 7878:7878       # radarr port
+      - 6767:6767       # bazarr port
       - 5055:5055       # overseerr port
     volumes:
       - ${ROOT_DIRECTORY}/data/dockerdata/glueton:/gluetun
@@ -134,6 +136,25 @@ services:
     depends_on:
       - qbittorrent
       - prowlarr
+
+  bazarr:
+    image: linuxserver/bazarr:latest
+    container_name: bazarr
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+    #   - 6767:6767
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${ROOT_DIRECTORY}/data/dockerdata/bazarr:/config
+      - ${ROOT_DIRECTORY}/data/media:/data/media
+    restart: unless-stopped
+    depends_on:
+      - sonarr
+      - radarr
 
   overseerr:
     image: linuxserver/overseerr:latest
