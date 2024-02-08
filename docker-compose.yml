@@ -3,12 +3,9 @@
 # choice (as long as it is supported in the gluetun docker image).
 #
 # VPN:
-#   Overseerr, Bazarr, Sonarr, Radarr, Prowlarr, qBittorrent
+#   Sonarr, Radarr, Prowlarr, Bazarr, qBittorrent
 # Non-VPN
-#   Plex
-#
-# Note that Sonarr, Radarr, Bazarr, and Overseerr dont need to be behind the VPN if you're using
-# Prowlarr for the indexers. But Prowlarr should be behind the VPN to avoid ISPs that block indexers.
+#   Plex, Overseerr
 #
 # Before running docker-compose, you should ensure all of the following directories exist. This can
 # be done using the init.sh script provided alongside the docker-compose file.
@@ -50,7 +47,6 @@ services:
       - 8989:8989       # sonnar port
       - 7878:7878       # radarr port
       - 6767:6767       # bazarr port
-      - 5055:5055       # overseerr port
     volumes:
       - ${ROOT_DIRECTORY}/data/dockerdata/glueton:/gluetun
     environment:
@@ -156,10 +152,8 @@ services:
   overseerr:
     image: linuxserver/overseerr:latest
     container_name: overseerr
-    network_mode: service:vpn
-    # Specified in vpn service due to network mode.
-    # ports:
-    #   - 5055:5055
+    ports:
+      - 5055:5055
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
