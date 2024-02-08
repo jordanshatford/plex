@@ -1,5 +1,6 @@
-# Homelab
+# Plex Server Setup
 
-This repository contains information on setting up various services for use in a homelab. The following is a list of supported services:
+This repository contains information on how to setup a [Plex](https://www.plex.tv/) server using [Docker](https://www.docker.com/).
 
-- [Plex](./plex/README.md)
+## Architecture Diagram
+![diagram](./architecture.png)
