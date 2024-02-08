@@ -185,6 +185,6 @@ services:
       - VERSION=latest
       - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
-      - ${ROOT_DIRECTORY}/data/dockerdata/plex:/config:rw
+      - ${ROOT_DIRECTORY}/data/dockerdata/plex:/config
       - ${ROOT_DIRECTORY}/data/media:/data/media
     restart: unless-stopped
