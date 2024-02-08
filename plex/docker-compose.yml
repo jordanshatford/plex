@@ -3,7 +3,7 @@
 # choice (as long as it is supported in the gluetun docker image).
 #
 # VPN:
-#   Overseerr, Bazarr, Sonarr, Radarr, Prowlarr, Qbittorrent
+#   Overseerr, Bazarr, Sonarr, Radarr, Prowlarr, qBittorrent
 # Non-VPN
 #   Plex
 #
@@ -20,7 +20,7 @@
 #  /data/dockerdata/sonarr       - Sonarr
 #  /data/dockerdata/radarr       - Radarr
 #  /data/dockerdata/prowlarr     - Prowlarr
-#  /data/dockerdata/qbt          - QBitorrent
+#  /data/dockerdata/qbittorrent  - qBittorrent
 #
 # Directories for Torrents:
 #  /data/torrents/movies         - Movies
