@@ -96,9 +96,6 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     restart: unless-stopped
-    depends_on:
-      - vpn
-      - qbittorrent
 
   sonarr:
     image: linuxserver/sonarr:latest
