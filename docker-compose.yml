@@ -27,7 +27,7 @@
 # Directories for Media:
 #  /data/media/movies            - Movies
 #  /data/media/tv                - TV Shows
-# 
+#
 
 version: '3.8'
 
