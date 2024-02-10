@@ -5,7 +5,7 @@
 # VPN:
 #   Sonarr, Radarr, Prowlarr, Bazarr, qBittorrent
 # Non-VPN
-#   Plex, Overseerr
+#   Plex, Overseerr, Tautulli
 #
 # Before running docker-compose, you should ensure all of the following directories exist. This can
 # be done using the init.sh script provided alongside the docker-compose file.
@@ -13,6 +13,7 @@
 # Directories for Docker State:
 #  /data/dockerdata/plex         - Plex
 #  /data/dockerdata/overseerr    - Overseerr
+#  /data/dockerdata/tautulli     - Tautulli
 #  /data/dockerdata/bazarr       - Bazarr
 #  /data/dockerdata/sonarr       - Sonarr
 #  /data/dockerdata/radarr       - Radarr
@@ -164,6 +165,19 @@ services:
     depends_on:
       - sonarr
       - radarr
+
+  tautulli:
+    image: linuxserver/tautulli:latest
+    container_name: tautulli
+    ports:
+      - 8181:8181
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${ROOT_DIRECTORY}/data/dockerdata/tautulli:/config
+    restart: unless-stopped
 
   plex:
     image: linuxserver/plex:latest
