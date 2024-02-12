@@ -3,7 +3,7 @@
 # choice (as long as it is supported in the gluetun docker image).
 #
 # VPN:
-#   Sonarr, Radarr, Prowlarr, Bazarr, qBittorrent
+#   Sonarr, Radarr, Bazarr, Prowlarr, FlareSolverr, qBittorrent
 # Non-VPN
 #   Plex, Overseerr, Tautulli
 #
@@ -77,6 +77,17 @@ services:
       - TZ=${TZ}
       - PUID=${PUID}
       - PGID=${PGID}
+    restart: unless-stopped
+
+  flaresolverr:
+    image: flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    network_mode: service:vpn
+    # Specified in vpn service due to network mode.
+    # ports:
+    #   - 8191:8191
+    environment:
+      - TZ=${TZ}
     restart: unless-stopped
 
   prowlarr:
