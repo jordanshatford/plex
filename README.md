@@ -47,3 +47,7 @@ The following is a list of all relevant directories used by the server. You can 
 /data/media/movies            # Movies
 /data/media/tv                # TV Shows
 ```
+
+## Setup
+
+Documentation for setting up the Plex server with each service can be found [here](./docs/README.md).
