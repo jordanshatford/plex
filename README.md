@@ -2,6 +2,17 @@
 
 This repository contains information on how to setup a [Plex](https://www.plex.tv/) server using [Docker](https://www.docker.com/).
 
+## User experience
+
+1. User finds new movie or TV show they want.
+2. User navigates to Overseerr and puts in request for the content.
+3. Overseerr requests the content from Sonarr or Radarr.
+4. Sonarr/Radarr ask Prowlarr for the content.
+5. Sonarr/Radarr queue the download (if available) in qBittorrent.
+6. qBittorrent downloads the content.
+7. Sonarr/Radarr request Bazarr to download subtitles for the content.
+8. The content becomes available in Plex to watch with subtitles.
+
 ## Architecture
 
 Below is the architectural diagram showing how each service interacts with one another. It provides a step by step flow of general usage.
