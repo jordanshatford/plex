@@ -48,5 +48,5 @@ qBittorrent is a download client. It automates the process of downloading files 
 14. Right click `Categories -> All` and add the following categories:
     1. `tv` with save path of: `tv`.
     2. `movies` with save path of: `movies`.
-       > Note: these categories will be used by Sonarr and Radarr.
+       > NOTE: these categories will be used by Sonarr and Radarr.
 15. You have finished setting up qBittorrent.
