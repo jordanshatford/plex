@@ -25,8 +25,10 @@ Then you can go through each of the following setup guides (in order) to configu
 5. [Radarr](./5-Radarr.md)
 6. [Prowlarr](./6-Prowlarr.md)
 7. [Bazarr](./7-Bazarr.md)
-   > _Optional: if you want subtitles._
+   > _OPTIONAL: if you want subtitles._
 8. [Tautulli](./8-Tautulli.md)
-   > _Optional: if you want better statistics._
+   > _OPTIONAL: if you want better statistics._
 9. [Overseerr](./9-Overseerr.md)
-   > _Optional: if you want easier requesting of movies and TV shows._
+   > _OPTIONAL: if you want easier requesting of movies and TV shows._
+
+> NOTE: All optional services are included by default and can be excluded by removing it from the `.env` files `COMPOSE_PROFILES=` list before running `docker compose up`.

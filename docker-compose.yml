@@ -129,6 +129,8 @@ services:
     depends_on:
       - sonarr
       - radarr
+    profiles:
+      - bazarr
 
   overseerr:
     image: linuxserver/overseerr:latest
@@ -145,6 +147,8 @@ services:
     depends_on:
       - sonarr
       - radarr
+    profiles:
+      - overseerr
 
   tautulli:
     image: linuxserver/tautulli:latest
@@ -158,6 +162,8 @@ services:
     volumes:
       - ${ROOT_DIRECTORY}/data/dockerdata/tautulli:/config
     restart: unless-stopped
+    profiles:
+      - tautulli
 
   plex:
     image: linuxserver/plex:latest
