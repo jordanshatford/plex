@@ -32,5 +32,7 @@ Then you can go through each of the following setup guides (in order) to configu
    > _OPTIONAL: if you want easier requesting of movies and TV shows._
 10. [Requestrr](./10-Requestrr.md)
     > _OPTIONAL: if you want to connect Discord bot for requesting movies and TV shows._
+11. [Maintainerr](./11-Maintainerr.md)
+    > _OPTIONAL: if you want to setup rules to automatically manage your media._
 
 > NOTE: All optional services are included by default and can be excluded by removing it from the `.env` files `COMPOSE_PROFILES=` list before running `docker compose up`.

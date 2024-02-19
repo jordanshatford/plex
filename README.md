@@ -26,6 +26,7 @@ The following is a list of services NOT on the VPN:
 - [Plex](https://www.plex.tv/)
 - [Overseerr](https://overseerr.dev/)
 - [Requestrr](https://github.com/thomst08/requestrr)
+- [Maintainerr](https://github.com/jorenn92/Maintainerr)
 - [Tautulli](https://tautulli.com/)
 
 The following is a list of services on the VPN:
@@ -45,6 +46,7 @@ The following is a list of all relevant directories used by the server. You can 
 /data/dockerdata/plex         # Plex
 /data/dockerdata/overseerr    # Overseerr
 /data/dockerdata/requestrr    # Requestrr
+/data/dockerdata/maintainerr  # Maintainerr
 /data/dockerdata/tautulli     # Tautulli
 /data/dockerdata/sonarr       # Sonarr
 /data/dockerdata/radarr       # Radarr

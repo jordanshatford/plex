@@ -164,6 +164,23 @@ services:
     profiles:
       - requestrr
 
+  maintainerr:
+    image: jorenn92/maintainerr:latest
+    container_name: maintainerr
+    user: ${PUID}:${PGID}
+    ports:
+      - 6246:6246
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${ROOT_DIRECTORY}/data/dockerdata/maintainerr:/opt/data
+    restart: unless-stopped
+    depends_on:
+      - sonarr
+      - radarr
+    profiles:
+      - maintainerr
+
   tautulli:
     image: linuxserver/tautulli:latest
     container_name: tautulli

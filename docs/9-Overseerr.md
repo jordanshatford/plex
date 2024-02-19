@@ -42,7 +42,7 @@ Overseerr is a software application for managing requests for your media library
 9. _Optionally_ use the following Tautulli settings:
    1. Hostname or IP Address: `tautulli`.
    2. Port: `8181`.
-   3. API Key: You Tautulli API key.
+   3. API Key: Your Tautulli API key.
 10. Navigate to `settings -> general`.
 11. Write down the `API Key` as we will need it in the future.
 12. You have finished setting up Overseerr.
