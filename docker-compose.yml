@@ -7,16 +7,16 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
-      - 8888:8888/tcp   # http proxy
-      - 8388:8388/tcp   # shadowsocks
-      - 8388:8388/udp   # shadowsocks
-      - 8080:8080       # qbittorrent web ui
-      - 6881:6881       # qbittorrent
-      - 6881:6881/udp   # qbittorrent
-      - 9696:9696       # prowlarr port
-      - 8989:8989       # sonnar port
-      - 7878:7878       # radarr port
-      - 6767:6767       # bazarr port
+      - 8888:8888/tcp # http proxy
+      - 8388:8388/tcp # shadowsocks
+      - 8388:8388/udp # shadowsocks
+      - 8080:8080 # qbittorrent web ui
+      - 6881:6881 # qbittorrent
+      - 6881:6881/udp # qbittorrent
+      - 9696:9696 # prowlarr port
+      - 8989:8989 # sonnar port
+      - 7878:7878 # radarr port
+      - 6767:6767 # bazarr port
     volumes:
       - ${ROOT_DIRECTORY}/data/dockerdata/glueton:/gluetun
     environment:
@@ -76,11 +76,11 @@ services:
 
   sonarr:
     image: linuxserver/sonarr:latest
-    container_name:  sonarr
+    container_name: sonarr
     network_mode: service:vpn
     # Specified in vpn service due to network mode.
     # ports:
-      # - 8989:8989
+    #   - 8989:8989
     volumes:
       - ${ROOT_DIRECTORY}/data/dockerdata/sonarr:/config
       - ${ROOT_DIRECTORY}/data:/data
