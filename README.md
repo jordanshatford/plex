@@ -2,11 +2,13 @@
 
 This repository contains information on how to setup a [Plex](https://www.plex.tv/) server using [Docker](https://www.docker.com/).
 
-## User experience
+## User experience requesting content
 
 1. User finds new movie or TV show they want.
-2. User navigates to Overseerr and puts in request for the content.
-3. Overseerr requests the content from Sonarr or Radarr.
+2. The user puts a request for the content in via one of the following:
+   1. Overseerr web interface.
+   2. Through Discord connected to Requestrr.
+3. A request for the content is sent to Sonarr (TV Show) or Radarr (Movie).
 4. Sonarr/Radarr ask Prowlarr for the content.
 5. Sonarr/Radarr queue the download (if available) in qBittorrent.
 6. qBittorrent downloads the content.
