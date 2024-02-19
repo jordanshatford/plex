@@ -17,7 +17,11 @@ This repository contains information on how to setup a [Plex](https://www.plex.t
 
 Below is the architectural diagram showing how each service interacts with one another. It provides a step by step flow of general usage.
 
-![diagram](./architecture.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./architecture.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./architecture.light.png">
+  <img alt="Image describing architecture" src="./architecture.light.png">
+</picture>
 
 > NOTE: The entirety of the automation section (highlighted in green) is protected by [Gluetun](https://github.com/qdm12/gluetun). This ensures all traffic goes through the VPN client setup.
 
