@@ -15,11 +15,13 @@ Requestrr is a chatbot used to simplify using services like Sonarr/Radarr/Ombi v
    2. Select the download client you want to use.
       > NOTE: if you are using Overseerr select that, otherwise select Radarr.
    3. Fill out information for the selected download client with your preferred settings.
+      > NOTE: Host or IP is `overseerr` or `vpn` (when using Radarr).
    4. Test the settings and then hit save.
 5. Configure for TV show requests:
    1. Navigate to `tv shows`.
    2. Select the download client you want to use.
       > NOTE: if you are using Overseerr select that, otherwise select Sonarr.
    3. Fill out information for the selected download client with your preferred settings.
+      > NOTE: Host or IP is `overseerr` or `vpn` (when using Sonarr).
    4. Test the settings and then hit save.
 6. You have finished setting up Requestrr.
