@@ -151,7 +151,7 @@ services:
       - overseerr
 
   requestrr:
-    image: thomst08/requestrr
+    image: thomst08/requestrr:latest
     container_name: requestrr
     ports:
       - 4545:4545
