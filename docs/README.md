@@ -30,5 +30,7 @@ Then you can go through each of the following setup guides (in order) to configu
    > _OPTIONAL: if you want better statistics._
 9. [Overseerr](./9-Overseerr.md)
    > _OPTIONAL: if you want easier requesting of movies and TV shows._
+10. [Requestrr](./10.Requestrr.md)
+    > _OPTIONAL: if you want to connect Discord bot for requesting movies and TV shows._
 
 > NOTE: All optional services are included by default and can be excluded by removing it from the `.env` files `COMPOSE_PROFILES=` list before running `docker compose up`.

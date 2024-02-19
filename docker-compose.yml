@@ -150,6 +150,20 @@ services:
     profiles:
       - overseerr
 
+  requestrr:
+    image: thomst08/requestrr
+    container_name: requestrr
+    ports:
+      - 4545:4545
+    volumes:
+      - ${ROOT_DIRECTORY}/data/dockerdata/requestrr:/root/config
+    restart: unless-stopped
+    depends_on:
+      - sonarr
+      - radarr
+    profiles:
+      - requestrr
+
   tautulli:
     image: linuxserver/tautulli:latest
     container_name: tautulli
