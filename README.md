@@ -1,6 +1,6 @@
 # Plex Server
 
-This repository contains information on how to setup a [Plex](https://www.plex.tv/) server using [Docker](https://www.docker.com/).
+This repository contains information on how to setup a [Plex](https://www.plex.tv/) server using [Docker 24.0+](https://www.docker.com/).
 
 ## User experience requesting content
 
