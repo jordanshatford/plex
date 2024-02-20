@@ -72,3 +72,16 @@ The following is a list of all relevant directories used by the server. You can 
 ## Setup
 
 Documentation for setting up the Plex server with each service can be found [here](./docs/README.md).
+
+## Updating existing instancee
+
+To update an existing deployed stack using `docker compose` run the following commands:
+
+```sh
+# Pull the latest changes container images.
+docker compose pull
+# Recreate any instances that have changed.
+docker compose up -d
+```
+
+> NOTE: you do not need to run `docker compose down` as `docker compose up` will recreate any containers that have updated.
