@@ -29,6 +29,7 @@ Below is the architectural diagram showing how each service interacts with one a
 
 The following is a list of services NOT on the VPN:
 
+- [Organizr](https://github.com/causefx/Organizr)
 - [Plex](https://www.plex.tv/)
 - [Overseerr](https://overseerr.dev/)
 - [Requestrr](https://github.com/thomst08/requestrr)
@@ -49,6 +50,7 @@ The following is a list of all relevant directories used by the server. You can 
 
 ```sh
 # Docker container state directories:
+/data/dockerdata/organizr     # Organizr
 /data/dockerdata/plex         # Plex
 /data/dockerdata/overseerr    # Overseerr
 /data/dockerdata/requestrr    # Requestrr

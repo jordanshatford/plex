@@ -210,3 +210,18 @@ services:
       - ${ROOT_DIRECTORY}/data/dockerdata/plex:/config
       - ${ROOT_DIRECTORY}/data/media:/data/media
     restart: unless-stopped
+
+  organizr:
+    image: organizr/organizr:latest
+    container_name: organizr
+    ports:
+      - 80:80
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    volumes:
+      - ${ROOT_DIRECTORY}/data/dockerdata/organizr:/config
+    restart: unless-stopped
+    profiles:
+      - organizr
