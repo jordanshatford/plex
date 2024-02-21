@@ -4,6 +4,8 @@ Requestrr is a chatbot used to simplify using services like Sonarr/Radarr/Ombi v
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://github.com/thomst08/requestrr/wiki).
+
 1. Launch the Requestrr web interface `http://${YOUR_IP}:4545`.
 2. Set username and password as preferred.
 3. Configure chat clients:

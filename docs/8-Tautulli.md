@@ -4,6 +4,8 @@ Tautulli is a web application for monitoring, analytics and notifications for Pl
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://github.com/Tautulli/Tautulli/wiki).
+
 1. Launch the Tautulli web interface `http://${YOUR_IP}:8181`.
 2. Navigate through the first time setup:
    1. Set username and password as preferred.

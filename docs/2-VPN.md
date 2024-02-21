@@ -6,6 +6,8 @@ The `docker-compose.yml` and `.env` files are setup to use OpenVPN. Gluetun supp
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://github.com/qdm12/gluetun-wiki).
+
 1. Find the desired OpenVPN provider you want to use.
 2. Update the `.env` files `OPENVPN_SERVICE_PROVIDER=` entry to specify that provider.
 3. Get the required user and password from your provider.

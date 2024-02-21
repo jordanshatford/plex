@@ -4,6 +4,8 @@ Bazarr is a companion application to Sonarr and Radarr. It manages and downloads
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://wiki.bazarr.media/).
+
 1. Launch the Bazarr web interface `http://${YOUR_IP}:6767`.
 2. Navigate to `settings -> general`.
 3. Setup up security settings:

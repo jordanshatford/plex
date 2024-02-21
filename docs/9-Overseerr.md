@@ -4,6 +4,8 @@ Overseerr is a software application for managing requests for your media library
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://docs.overseerr.dev/).
+
 1. Launch the Overseerr web interface `http://${YOUR_IP}:5055`.
 2. Sign in with Plex.
 3. Configure Plex with the local IP server from the list.

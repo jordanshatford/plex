@@ -4,6 +4,8 @@ Plex is the core of the media server. It is a media center software that allows 
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://support.plex.tv/articles/categories/plex-media-server/).
+
 1. Generate a Plex claim code [here](https://www.plex.tv/claim/).
 2. Update your `.env` file with the generated code `PLEX_CLAIM=code`.
 3. Launch the Plex web interface `http://${YOUR_IP}:32400/web`.

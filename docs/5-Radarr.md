@@ -4,6 +4,8 @@ Radarr is a movie management service that is similar to Sonarr, but for movies. 
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://wiki.servarr.com/radarr).
+
 1. Launch the Radarr web interface `http://${YOUR_IP}:7878`.
 2. Perform first time setup:
    1. Authentication Method: `Forms (Login Page)`.

@@ -6,7 +6,11 @@ Prowlarr is an indexer manager/proxy built to integrate with your various PVR ap
 
 FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.
 
+Please reference the FlareSolverr documentation if you plan to use it. It can be found [here](https://github.com/FlareSolverr/FlareSolverr/wiki).
+
 ## Setup
+
+Please reference the official documentation while running through the setup. It can be found [here](https://wiki.servarr.com/prowlarr).
 
 1. Launch the Prowlarr web interface `http://${YOUR_IP}:9696`.
 2. Perform first time setup:

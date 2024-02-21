@@ -16,6 +16,8 @@ PGID=1000
 
 After which you should re-run the `init.sh` script to ensure that all directories are present.
 
+## Setting up each service
+
 Then you can go through each of the following setup guides (in order) to configure each service.
 
 1. [Plex](./1-Plex.md)
@@ -38,3 +40,7 @@ Then you can go through each of the following setup guides (in order) to configu
     > _OPTIONAL: if you want a dashboard to configure easy access to all services._
 
 > NOTE: All optional services are included by default and can be excluded by removing it from the `.env` files `COMPOSE_PROFILES=` list before running `docker compose up`.
+
+## Additional information
+
+TRaSH-Guides provides a set of documentation for setting up various services related to Plex. It was referenced when creating the documentation above. You can access that documentation directly [here](https://trash-guides.info/).

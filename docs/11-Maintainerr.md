@@ -4,6 +4,8 @@ Maintainerr makes managing your media easy. It's a one-stop-shop for handling th
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://github.com/jorenn92/Maintainerr/tree/main/docs).
+
 1. Launch the Maintainerr web interface `http://${YOUR_IP}:6246`.
 2. Authenticate with Plex.
 3. Select the relevant server, test the connection, and then hit save.

@@ -4,6 +4,8 @@ Sonarr is a TV show management service that can automatically download new TV sh
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://wiki.servarr.com/sonarr).
+
 1. Launch the Sonarr web interface `http://${YOUR_IP}:8989`.
 2. Perform first time setup:
    1. Authentication Method: `Forms (Login Page)`.

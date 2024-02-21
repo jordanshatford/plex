@@ -4,6 +4,8 @@ qBittorrent is a download client. It automates the process of downloading files 
 
 ## Setup
 
+Please reference the official documentation while running through the setup. It can be found [here](https://github.com/qbittorrent/qBittorrent/wiki).
+
 1. Launch the qBittorrent web interface `http://${YOUR_IP}:8080`.
    > NOTE: if this is the first time launching you should check the docker logs for the default user password by running `docker compose logs qbittorrent`.
 2. Login to the web interface.
