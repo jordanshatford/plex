@@ -19,5 +19,8 @@ TV Shows -> /data/media/tv
 
 6. Navigate to `settings -> remote access`.
 7. Ensure that remote access is enabled and working.
-   > NOTE: remember the publicly accessible IP and port as it will be needed when setting up other services.
 8. You have finished setting up Plex.
+9. Navigate to `settings -> library`.
+10. Ensure that Scan my library automatically is enabled.
+11. Ensure that Run a partial scan when changes are detected is enabled.
+12. You have finished setting up Plex.

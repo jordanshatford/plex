@@ -24,14 +24,6 @@ Please reference the official documentation while running through the setup. It 
    4. Port: `8080`.
    5. Category: `tv`.
 7. Test the connection and then hit save.
-8. Navigate to `settings -> connect`.
-9. Click the plus and select `Plex Media Server`.
-10. Use the following settings:
-    1. Host: Publicly accessibly Plex host.
-       > NOTE: This is due to Sonarr running behind a VPN.
-    2. Port: Publicly accessibly Plex port.
-    3. Update Library: `Enabled`.
-11. Test the connection and then hit save.
-12. Navigate to `settings -> general`.
-13. Write down the `API Key` as we will need it in the future.
-14. You have finished setting up Sonarr.
+8. Navigate to `settings -> general`.
+9. Write down the `API Key` as we will need it in the future.
+10. You have finished setting up Sonarr.

@@ -7,10 +7,12 @@ Overseerr is a software application for managing requests for your media library
 Please reference the official documentation while running through the setup. It can be found [here](https://docs.overseerr.dev/).
 
 1. Launch the Overseerr web interface `http://${YOUR_IP}:5055`.
-2. Sign in with Plex.
-3. Configure Plex with the local IP server from the list.
-4. Enable Plex library sync for TV shows and Movies.
-5. Configure Radarr server:
+2. Configure Plex settings:
+   1. Hostname or IP Address: `host.docker.internal`.
+   2. Port: `32400`.
+   3. Use SSL: `Disabled`.
+3. Navigate to `settings -> services`.
+4. Configure Radarr settings:
    1. Default Server: `Enabled`.
    2. Server Name: `Radarr HD 720p/1080p`.
    3. Hostname or IP Address: `vpn`.
@@ -23,7 +25,7 @@ Please reference the official documentation while running through the setup. It 
    9. Minimum Availability: `Released`.
    10. Enable Scan: `Enabled`.
    11. Enable Automatic Search: `Enabled`.
-6. Configure Sonarr server:
+5. Configure Sonarr settings:
    1. Default Server: `Enabled`.
    2. Server Name: `Sonarr HD 720p/1080p`.
    3. Hostname or IP Address: `vpn`.
@@ -39,12 +41,12 @@ Please reference the official documentation while running through the setup. It 
    12. Season Folders: `Enabled`.
    13. Enable Scan: `Enabled`.
    14. Enable Automatic Search: `Enabled`.
-7. Finish setup.
-8. Navigate to `settings -> plex`.
-9. _Optionally_ use the following Tautulli settings:
+6. Finish setup.
+7. Navigate to `settings -> plex`.
+8. _Optionally_ use the following Tautulli settings:
    1. Hostname or IP Address: `tautulli`.
    2. Port: `8181`.
    3. API Key: Your Tautulli API key.
-10. Navigate to `settings -> general`.
-11. Write down the `API Key` as we will need it in the future.
-12. You have finished setting up Overseerr.
+9. Navigate to `settings -> general`.
+10. Write down the `API Key` as we will need it in the future.
+11. You have finished setting up Overseerr.

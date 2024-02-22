@@ -10,7 +10,11 @@ Please reference the official documentation while running through the setup. It 
 2. Navigate through the first time setup:
    1. Set username and password as preferred.
    2. Sign in with Plex account.
-   3. Select your local IP Plex server from the list.
+   3. Configure Plex server:
+      1. Plex IP Address or Hostname: `host.docker.internal`.
+      2. Port: `32400`.
+      3. Use Secure Connection: `Disabled`.
+      4. Remote Server: `Disabled`.
    4. Finish setup.
 3. Sign in with Plex.
 4. Navigate to `settings -> web interface`.
