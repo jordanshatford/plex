@@ -20,7 +20,7 @@ services:
     volumes:
       - ${ROOT_DIRECTORY:-.}/data/dockerdata/glueton:/gluetun
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
       - VPN_SERVICE_PROVIDER=${OPENVPN_SERVICE_PROVIDER}
@@ -43,7 +43,7 @@ services:
       - ${ROOT_DIRECTORY:-.}/data/dockerdata/qbittorrent:/config
       - ${ROOT_DIRECTORY:-.}/data/torrents:/data/torrents
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     restart: unless-stopped
@@ -56,7 +56,7 @@ services:
     # ports:
     #   - 8191:8191
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
     restart: unless-stopped
 
   prowlarr:
@@ -69,7 +69,7 @@ services:
     volumes:
       - ${ROOT_DIRECTORY:-.}/data/dockerdata/prowlarr:/config
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     restart: unless-stopped
@@ -85,7 +85,7 @@ services:
       - ${ROOT_DIRECTORY:-.}/data/dockerdata/sonarr:/config
       - ${ROOT_DIRECTORY:-.}/data:/data
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     depends_on:
@@ -100,7 +100,7 @@ services:
     # ports:
     #   - 7878:7878
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
@@ -119,7 +119,7 @@ services:
     # ports:
     #   - 6767:6767
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
@@ -140,7 +140,7 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
@@ -175,7 +175,7 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
     volumes:
       - ${ROOT_DIRECTORY:-.}/data/dockerdata/maintainerr:/opt/data
     restart: unless-stopped
@@ -193,7 +193,7 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
@@ -207,7 +207,7 @@ services:
     container_name: plex
     network_mode: host
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
       - VERSION=latest
@@ -223,7 +223,7 @@ services:
     ports:
       - 80:80
     environment:
-      - TZ=${TZ}
+      - TZ=${TZ:-Etc/UTC}
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
