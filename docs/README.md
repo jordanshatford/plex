@@ -3,8 +3,10 @@
 The first step is to update the `.env` file with relevant information for the following entries:
 
 ```sh
-# Directory to store all information.
-ROOT_DIRECTORY=.
+# Root directory to store all data related to docker containers.
+DOCKERDATA_ROOT_DIRECTORY=.
+# Root directory to store all data (media and torrents).
+DATA_ROOT_DIRECTORY=.
 
 # TZ used in containers.
 TZ=America/Halifax

@@ -8,18 +8,22 @@ fi
 
 # Source the env file so we know where to create the directories required.
 source $env_file
-root_dir="${ROOT_DIRECTORY:-.}"
 
-dirs=(
-  "data/dockerdata"
+# Create dockerdata directory with .gitignore ignoring all subdirectories.
+dockerdata_dir="${DOCKERDATA_ROOT_DIRECTORY:-.}/dockerdata"
+mkdir -p "$dockerdata_dir"
+touch "$dockerdata_dir/.gitkeep"
+printf "**/\n" > "$dockerdata_dir/.gitignore"
+
+# Create all required data directories for media and torrents.
+data_root_dir="${DATA_ROOT_DIRECTORY:-.}"
+data_dirs=(
   "data/media/movies"
   "data/media/tv"
   "data/torrents/movies"
   "data/torrents/tv"
 )
-
-# Create each of the required directories.
-for dir in "${dirs[@]}"; do
-  mkdir -p "$root_dir/$dir"
-  touch "$dir/.gitkeep"
+for dir in "${data_dirs[@]}"; do
+  mkdir -p "$data_root_dir/$dir"
+  touch "$data_root_dir/$dir/.gitkeep"
 done

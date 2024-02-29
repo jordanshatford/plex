@@ -50,25 +50,24 @@ The following is a list of all relevant directories used by the server. You can 
 
 ```sh
 # Docker container state directories:
-/data/dockerdata/organizr     # Organizr
-/data/dockerdata/plex         # Plex
-/data/dockerdata/overseerr    # Overseerr
-/data/dockerdata/requestrr    # Requestrr
-/data/dockerdata/maintainerr  # Maintainerr
-/data/dockerdata/tautulli     # Tautulli
-/data/dockerdata/sonarr       # Sonarr
-/data/dockerdata/radarr       # Radarr
-/data/dockerdata/bazarr       # Bazarr
-/data/dockerdata/prowlarr     # Prowlarr
-/data/dockerdata/qbittorrent  # qBittorrent
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/organizr     # Organizr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/plex         # Plex
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/overseerr    # Overseerr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/requestrr    # Requestrr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/maintainerr  # Maintainerr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/tautulli     # Tautulli
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/sonarr       # Sonarr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/radarr       # Radarr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/bazarr       # Bazarr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/prowlarr     # Prowlarr
+$DOCKERDATA_ROOT_DIRECTORY/dockerdata/qbittorrent  # qBittorrent
 
 # Directories for Torrents:
-/data/torrents/movies         # Movies
-/data/torrents/tv             # TV Shows
-
+$DATA_ROOT_DIRECTORY/data/torrents/movies         # Movies
+$DATA_ROOT_DIRECTORY/data/torrents/tv             # TV Shows
 # Directories for Media:
-/data/media/movies            # Movies
-/data/media/tv                # TV Shows
+$DATA_ROOT_DIRECTORY/data/media/movies            # Movies
+$DATA_ROOT_DIRECTORY/data/media/tv                # TV Shows
 ```
 
 ## Setup
