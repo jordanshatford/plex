@@ -4,6 +4,8 @@
 env_file=".env"
 if ! [ -f $env_file ]; then
   cp example.env $env_file
+  printf "ERROR: .env file did not exist, copying over example.env. Please edit and re-run this script.\n"
+  exit 1
 fi
 
 # Source the env file so we know where to create the directories required.

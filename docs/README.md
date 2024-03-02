@@ -1,6 +1,8 @@
 # Setup Documenation
 
-The first step is to update the `.env` file with relevant information for the following entries:
+The first step is to run the `init.sh` script. If a `.env` file does not exist then it will copy over the example `.env` file for you to fill out.
+
+Fill out the `.env` file as desired:
 
 ```sh
 # Root directory to store all data related to docker containers.
@@ -14,9 +16,21 @@ TZ=America/Halifax
 # User and group ID to use in containers.
 PUID=1000
 PGID=1000
+
+# Optional services to include when running compose.
+COMPOSE_PROFILES=bazarr,maintainerr,organizr,overseerr,requestrr,tautulli
+
+# VPN setup (OpenVPN)
+OPENVPN_SERVICE_PROVIDER=nordvpn
+OPENVPN_USER=SECRET
+OPENVPN_PASSWORD=SECRET
+OPENVPN_SERVER_COUNTRIES=Canada
+
+# Plex Claim (Optional) Found: https://plex.tv/claim
+PLEX_CLAIM=
 ```
 
-After which you should re-run the `init.sh` script to ensure that all directories are present.
+After filling out the file, re-run the `init.sh` script to ensure that all directories are present.
 
 ## Setting up each service
 
